@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">Beamlak Tareke</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#work" class="nav-link">Work</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Beamlak Tareke</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Welcome to my portfolio! I'm a passionate developer specializing in creating beautiful and functional web applications.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#work" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+           <!--     <div class="profile-card">  -->
+                    <div class="profile-image">
+                        <img src="Pictures/JMG03541.jpg" alt="Beamlak Tareke" class="hero-photo">                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Hello! I'm a passionate developer</h3>
+                    <p>
+                        I'm a creative developer with a passion for building beautiful, 
+                        functional, and user-centered digital experiences. With expertise 
+                        in modern web technologies, I love turning complex problems into 
+                        simple, elegant solutions.
+                    </p>
+                    <p>
+                        When I'm not coding, you can find me exploring new technologies, 
+                        contributing to open source projects, or enjoying a good cup of coffee 
+                        while sketching out my next big idea.
+                    </p>
+                    <div class="skills">
+                        <h4>Skills & Technologies</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Figma</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="work">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">My Work</h2>
+                <p class="section-subtitle">Explore my projects organized by category</p>
+            </div>
+            <div class="work-folders">
+                <a href="create.html" class="folder" data-category="create">
+                    <div class="folder-icon">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <h3 class="folder-title">Create</h3>
+                    <p class="folder-subtitle">Photography, TikTok, YouTube</p>
+                    <div class="folder-content">
+                        <div class="project-item">
+                            <h4>Photography Portfolio</h4>
+                            <p>Capturing moments and telling stories through the lens</p>
+                        </div>
+                        <div class="project-item">
+                            <h4>TikTok Content</h4>
+                            <p>Creative short-form video content and viral trends</p>
+                        </div>
+                        <div class="project-item">
+                            <h4>YouTube Channel</h4>
+                            <p>Educational and entertaining video content</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="design.html" class="folder" data-category="design">
+                    <div class="folder-icon">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <h3 class="folder-title">Design</h3>
+                    <p class="folder-subtitle">Web Projects, Branding</p>
+                    <div class="folder-content">
+                        <div class="project-item">
+                            <h4>Web Design Projects</h4>
+                            <p>Modern, responsive web designs and user interfaces</p>
+                        </div>
+                        <div class="project-item">
+                            <h4>Brand Identity</h4>
+                            <p>Logo design, brand guidelines, and visual identity systems</p>
+                        </div>
+                        <div class="project-item">
+                            <h4>UI/UX Design</h4>
+                            <p>User-centered design solutions and prototypes</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="build.html" class="folder" data-category="build">
+                    <div class="folder-icon">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <h3 class="folder-title">Build</h3>
+                    <p class="folder-subtitle">BTzero Studios, Digital Products</p>
+                    <div class="folder-content">
+                        <div class="project-item">
+                            <h4>BTzero Studios</h4>
+                            <p>Creative studio specializing in digital solutions</p>
+                        </div>
+                        <div class="project-item">
+                            <h4>Digital Products</h4>
+                            <p>Web applications, mobile apps, and software solutions</p>
+                        </div>
+                        <div class="project-item">
+                            <h4>E-commerce Solutions</h4>
+                            <p>Online stores and digital marketplace platforms</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="share.html" class="folder" data-category="share">
+                    <div class="folder-icon">
+                        <i class="fas fa-folder"></i>
+                    </div>
+                    <h3 class="folder-title">Share</h3>
+                    <p class="folder-subtitle">Courses, Blog</p>
+                    <div class="folder-content">
+                        <div class="project-item">
+                            <h4>Online Courses</h4>
+                            <p>Educational content and skill development programs</p>
+                        </div>
+                        <div class="project-item">
+                            <h4>Technical Blog</h4>
+                            <p>Insights, tutorials, and industry thoughts</p>
+                        </div>
+                        <div class="project-item">
+                            <h4>Community Building</h4>
+                            <p>Building and nurturing online communities</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's work together on something amazing</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>Feel free to hit me up!
+                        <br> Whether you want to talk business, or you have a question, or you simply just have something to say, I'd love to hear from you!</p>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <!--Email-->
+                            <i class="fas fa-envelope"></i>
+                            <span>beamlaktareke@gmail.com</span>
+                        </div>
+
+                        <div class="contact-method">
+                            <!--Location-->
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span> Toronto, Canada</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 BTzero Studios. All rights reserved.</p>
+                <p>Built with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
