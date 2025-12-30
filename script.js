@@ -260,21 +260,49 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animate journey path on scroll
     const journeyPath = document.querySelector('.journey-path');
     const journeyMap = document.querySelector('.journey-map');
+    const journeyDot = document.querySelector('.journey-dot');
+    const countryMarkers = document.querySelectorAll('.country-marker');
     
     if (journeyPath && journeyMap) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Reset and restart animation
-                    journeyPath.style.animation = 'none';
-                    setTimeout(() => {
-                        journeyPath.style.animation = 'drawPath 6s ease-in-out forwards';
-                    }, 10);
-                }
+        const startAnimations = () => {
+            // Reset and restart all animations together
+            journeyPath.style.animation = 'none';
+            countryMarkers.forEach(marker => {
+                marker.style.animation = 'none';
             });
-        }, { threshold: 0.3 });
+            
+            // Force reflow
+            void journeyPath.offsetWidth;
+            
+            // Start all animations simultaneously
+            setTimeout(() => {
+                journeyPath.style.animation = 'drawPath 6s ease-in-out forwards';
+                countryMarkers.forEach(marker => {
+                    marker.style.animation = 'fadeInMarker 1s ease-in-out forwards';
+                });
+            }, 10);
+        };
         
-        observer.observe(journeyMap);
+        // Check if already visible on load
+        const rect = journeyMap.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        
+        if (isVisible) {
+            // Start immediately if already visible
+            startAnimations();
+        } else {
+            // Wait for scroll into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        startAnimations();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            observer.observe(journeyMap);
+        }
     }
 });
 
