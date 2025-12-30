@@ -13,7 +13,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="#home">Beamlak Tareke</a>
+                <a href="#home"><img src="Pictures/Sign.png" alt="Beamlak Tareke" class="logo-image"></a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -42,10 +42,11 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Hi, I'm <span class="highlight">Beamlak Tareke</span>
+                    ሰላም | Hello 👋🏽
+                    <br> I'm <span class="highlight">Beamlak</span> and welcome to my site.
                 </h1>
                 <p class="hero-subtitle">
-                    Welcome to my portfolio! I'm a passionate developer specializing in creating beautiful and functional web applications.
+                    Turning ideas into reality, through code and craft.
                 </p>
                 <div class="hero-buttons">
                     <a href="#work" class="btn btn-primary">View My Work</a>
@@ -68,49 +69,87 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title"> 👨🏽‍💻 About Me</h2>
                 <p class="section-subtitle">Get to know me better</p>
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Hello! I'm a passionate developer</h3>
+                    <h3>My Journey</h3>
                     <p>
-                        I'm a creative developer with a passion for building beautiful, 
-                        functional, and user-centered digital experiences. With expertise 
-                        in modern web technologies, I love turning complex problems into 
-                        simple, elegant solutions.
-                    </p>
+                        I'm a computer science student with a passion for bringing ideas to life.
+                        My journey has taken me across three countries, each shaping who I am today.
+                                        </p>
                     <p>
-                        When I'm not coding, you can find me exploring new technologies, 
-                        contributing to open source projects, or enjoying a good cup of coffee 
-                        while sketching out my next big idea.
+                        From Ethiopia to Mozambique to Canada, I've embraced diverse cultures, 
+                        perspectives, and opportunities that fuel my creativity and enourage me to make an impact.
+                        Im passionate about community focused work and enjoy building things that 
+                        sit at the intersection of technology, creativity, and purpose.
                     </p>
                     <div class="skills">
                         <h4>Skills & Technologies</h4>
                         <div class="skill-tags">
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
                             <span class="skill-tag">JavaScript</span>
                             <span class="skill-tag">React</span>
                             <span class="skill-tag">Node.js</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">Git</span>
-                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Salesforce</span>
+                            <span class="skill-tag">Adobe Creative Suite</span>
                         </div>
                     </div>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">3+</div>
-                        <div class="stat-label">Years Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Client Satisfaction</div>
+                <div class="journey-animation-container">
+                    <div class="journey-map">
+                        <svg class="journey-svg" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Beautiful swirl path from Ethiopia → Mozambique → Canada -->
+                            <path id="journey-path" class="journey-path" 
+                                  d="M 150 400 Q 180 350 220 380 Q 280 420 320 360 Q 360 300 400 250 Q 480 180 550 150 Q 620 120 680 100" 
+                                  fill="none" stroke="#2563eb" stroke-width="4" 
+                                  stroke-dasharray="1400" stroke-dashoffset="1400"
+                                  stroke-linecap="round" opacity="0.8"/>
+                            
+                            <!-- Animated dot following the path -->
+                            <circle class="journey-dot" r="10" fill="#fbbf24">
+                                <animateMotion dur="7s" repeatCount="indefinite">
+                                    <mpath href="#journey-path"/>
+                                </animateMotion>
+                            </circle>
+                            
+                            <!-- Ethiopia emoji marker -->
+                            <g class="country-marker" data-country="ethiopia">
+                                <image href="Pictures/Eth-background.png" 
+                                       x="-30" y="290" 
+                                       width="400" height="200" 
+                                       class="country-background ethiopia-bg"
+                                       preserveAspectRatio="xMidYMid meet"/>
+                                <circle cx="150" cy="400" r="30" fill="rgba(245, 158, 11, 0.1)" class="marker-ring"/>
+                                <text x="140" y="415" text-anchor="middle" class="country-emoji" font-size="70">🇪🇹</text>
+                            </g>
+                            
+                            <!-- Mozambique emoji marker -->
+                            <g class="country-marker" data-country="mozambique">
+                                <image href="Pictures/Mozambique-background.png" 
+                                       x="200" y="165" 
+                                       width="400" height="200" 
+                                       class="country-background mozambique-bg"
+                                       preserveAspectRatio="xMidYMid meet"/>
+                                <circle cx="400" cy="250" r="30" fill="rgba(139, 92, 246, 0.1)" class="marker-ring"/>
+                                <text x="400" y="265" text-anchor="middle" class="country-emoji" font-size="70">🇲🇿</text>
+                            </g>
+                            
+                            <!-- Canada emoji marker -->
+                            <g class="country-marker" data-country="canada">
+                                <image href="Pictures/Canada-640x640.webp" 
+                                       x="480" y="10" 
+                                       width="400" height="200" 
+                                       class="country-background canada-bg"
+                                       preserveAspectRatio="xMidYMid meet"/>
+                                <circle cx="680" cy="100" r="30" fill="rgba(239, 68, 68, 0.1)" class="marker-ring"/>
+                                <text x="680" y="135" text-anchor="middle" class="country-emoji" font-size="70">🇨🇦</text>
+                            </g>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -121,96 +160,39 @@
     <section id="work" class="work">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">My Work</h2>
+                <h2 class="section-title"> ✍🏽 My Work</h2>
                 <p class="section-subtitle">Explore my projects organized by category</p>
             </div>
             <div class="work-folders">
-                <a href="create.html" class="folder" data-category="create">
+                <a href="cs-projects.html" class="folder" data-category="cs">
                     <div class="folder-icon">
                         <i class="fas fa-folder"></i>
                     </div>
-                    <h3 class="folder-title">Create</h3>
-                    <p class="folder-subtitle">Photography, TikTok, YouTube</p>
+                    <h3 class="folder-title">Projects</h3>
+                    <p class="folder-subtitle">"Coding Projects I have worked on over the years."</p>
                     <div class="folder-content">
-                        <div class="project-item">
-                            <h4>Photography Portfolio</h4>
-                            <p>Capturing moments and telling stories through the lens</p>
-                        </div>
-                        <div class="project-item">
-                            <h4>TikTok Content</h4>
-                            <p>Creative short-form video content and viral trends</p>
-                        </div>
-                        <div class="project-item">
-                            <h4>YouTube Channel</h4>
-                            <p>Educational and entertaining video content</p>
-                        </div>
+                     
                     </div>
                 </a>
 
-                <a href="design.html" class="folder" data-category="design">
+                <a href="creative-projects.html" class="folder" data-category="creative">
                     <div class="folder-icon">
                         <i class="fas fa-folder"></i>
                     </div>
-                    <h3 class="folder-title">Design</h3>
-                    <p class="folder-subtitle">Web Projects, Branding</p>
+                    <h3 class="folder-title">Creative</h3>
+                    <p class="folder-subtitle">"Show your work."</p>
                     <div class="folder-content">
-                        <div class="project-item">
-                            <h4>Web Design Projects</h4>
-                            <p>Modern, responsive web designs and user interfaces</p>
-                        </div>
-                        <div class="project-item">
-                            <h4>Brand Identity</h4>
-                            <p>Logo design, brand guidelines, and visual identity systems</p>
-                        </div>
-                        <div class="project-item">
-                            <h4>UI/UX Design</h4>
-                            <p>User-centered design solutions and prototypes</p>
-                        </div>
+
                     </div>
                 </a>
 
-                <a href="build.html" class="folder" data-category="build">
+                <a href="features-media.html" class="folder" data-category="features">
                     <div class="folder-icon">
                         <i class="fas fa-folder"></i>
                     </div>
-                    <h3 class="folder-title">Build</h3>
-                    <p class="folder-subtitle">BTzero Studios, Digital Products</p>
-                    <div class="folder-content">
-                        <div class="project-item">
-                            <h4>BTzero Studios</h4>
-                            <p>Creative studio specializing in digital solutions</p>
-                        </div>
-                        <div class="project-item">
-                            <h4>Digital Products</h4>
-                            <p>Web applications, mobile apps, and software solutions</p>
-                        </div>
-                        <div class="project-item">
-                            <h4>E-commerce Solutions</h4>
-                            <p>Online stores and digital marketplace platforms</p>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="share.html" class="folder" data-category="share">
-                    <div class="folder-icon">
-                        <i class="fas fa-folder"></i>
-                    </div>
-                    <h3 class="folder-title">Share</h3>
-                    <p class="folder-subtitle">Courses, Blog</p>
-                    <div class="folder-content">
-                        <div class="project-item">
-                            <h4>Online Courses</h4>
-                            <p>Educational content and skill development programs</p>
-                        </div>
-                        <div class="project-item">
-                            <h4>Technical Blog</h4>
-                            <p>Insights, tutorials, and industry thoughts</p>
-                        </div>
-                        <div class="project-item">
-                            <h4>Community Building</h4>
-                            <p>Building and nurturing online communities</p>
-                        </div>
-                    </div>
+                    <h3 class="folder-title">Features</h3>
+                    <p class="folder-subtitle">"Others trust and showcase my work."</p>
+ 
                 </a>
             </div>
         </div>
@@ -242,17 +224,17 @@
                         </div>
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-link">
+                        <a href="https://github.com/btareke" class="social-link">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="https://www.linkedin.com/in/beamlaktareke/" class="social-link">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://www.instagram.com/beamlak_tareke" class="social-link">
+                            <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-dribbble"></i>
+                        <a href="https://x.com/beamlak_tareke" class="social-link">
+                            <i class="fab fa-twitter"></i>
                         </a>
                     </div>
                 </div>
@@ -285,6 +267,7 @@
         </div>
     </footer>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

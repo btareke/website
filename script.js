@@ -77,51 +77,74 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements for animation
-document.querySelectorAll('.work-item, .stat-item, .about-text, .contact-info').forEach(el => {
+document.querySelectorAll('.stat-item, .about-text, .contact-info').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
 
-// Contact form handling
+// Initialize EmailJS
+(function() {
+    emailjs.init("nx5eFQ9JGdUH-3Hmb");
+})();
+
+// Contact form handling with EmailJS
 const contactForm = document.querySelector('.contact-form');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');
-    
-    // Simple validation
-    if (!name || !email || !subject || !message) {
-        alert('Please fill in all fields');
-        return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address');
-        return;
-    }
-    
-    // Simulate form submission
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-    
-    setTimeout(() => {
-        alert('Thank you for your message! I\'ll get back to you soon.');
-        contactForm.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 2000);
-});
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const subject = formData.get('subject');
+        const message = formData.get('message');
+        
+        // Simple validation
+        if (!name || !email || !subject || !message) {
+            alert('Please fill in all fields');
+            return;
+        }
+        
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('Please enter a valid email address');
+            return;
+        }
+        
+        // Get submit button
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Prepare template parameters
+        const templateParams = {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message
+        };
+        
+        // Send email using EmailJS
+        emailjs.send('service_a18t1ii', 'template_wcbj3um', templateParams)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Thank you for your message! I\'ll get back to you soon.');
+                contactForm.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, function(error) {
+                console.log('FAILED...', error);
+                alert('Sorry, there was an error sending your message. Please try again or email me directly at beamlaktareke@gmail.com');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+    });
+}
 
 // Typing effect for hero title
 function typeWriter(element, text, speed = 100) {
@@ -166,7 +189,12 @@ window.addEventListener('load', () => {
 
 // Folder interaction functionality
 document.querySelectorAll('.folder').forEach(folder => {
-    folder.addEventListener('click', () => {
+    folder.addEventListener('click', (e) => {
+        // Don't toggle if clicking on a project item link
+        if (e.target.closest('.project-item a')) {
+            return;
+        }
+        
         // Close all other folders
         document.querySelectorAll('.folder').forEach(otherFolder => {
             if (otherFolder !== folder) {
@@ -229,55 +257,24 @@ document.head.appendChild(style);
 
 // Journey Map Interactions
 document.addEventListener('DOMContentLoaded', function() {
-    const countryMarkers = document.querySelectorAll('.country-marker');
-    const countryCards = document.querySelectorAll('.country-card');
-    
-    // Add click interactions to country markers
-    countryMarkers.forEach(marker => {
-        marker.addEventListener('click', function() {
-            const country = this.getAttribute('data-country');
-            highlightCountryCard(country);
-        });
-        
-        marker.addEventListener('mouseenter', function() {
-            const country = this.getAttribute('data-country');
-            highlightCountryCard(country);
-        });
-    });
-    
-    // Add click interactions to country cards
-    countryCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const country = this.getAttribute('data-country');
-            highlightCountryCard(country);
-        });
-    });
-    
-    function highlightCountryCard(country) {
-        // Remove active class from all cards
-        countryCards.forEach(card => {
-            card.classList.remove('active');
-        });
-        
-        // Add active class to selected country card
-        const activeCard = document.querySelector(`[data-country="${country}"]`);
-        if (activeCard) {
-            activeCard.classList.add('active');
-        }
-    }
-    
     // Animate journey path on scroll
     const journeyPath = document.querySelector('.journey-path');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animationPlayState = 'running';
-            }
-        });
-    }, { threshold: 0.5 });
+    const journeyMap = document.querySelector('.journey-map');
     
-    if (journeyPath) {
-        observer.observe(journeyPath);
+    if (journeyPath && journeyMap) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Reset and restart animation
+                    journeyPath.style.animation = 'none';
+                    setTimeout(() => {
+                        journeyPath.style.animation = 'drawPath 6s ease-in-out forwards';
+                    }, 10);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        observer.observe(journeyMap);
     }
 });
 
