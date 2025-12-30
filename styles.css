@@ -1028,7 +1028,7 @@ section {
 /* Category-specific page headers */
 .cs-header {
     background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
-    background-image: url('Pictures/code.jpg');
+    background-image: url('Pictures/Code.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1041,7 +1041,7 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('Pictures/code.jpg');
+    background-image: url('Pictures/Code.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
