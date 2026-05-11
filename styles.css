@@ -1180,13 +1180,13 @@ section { padding: var(--section-pad) 0; }
     .hero-container {
         grid-template-columns: 1fr;
         gap: 2.5rem;
-        text-align: left;
+        text-align: center;
     }
 
-    .hero-image { justify-content: flex-start; }
+    .hero-image { justify-content: center; }
     .profile-image { max-width: 280px; }
 
-    .hero-buttons { justify-content: flex-start; }
+    .hero-buttons { justify-content: center; }
 
     .about-content { grid-template-columns: 1fr; gap: 2.5rem; }
     .contact-content { grid-template-columns: 1fr; gap: 2.5rem; }
